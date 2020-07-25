@@ -1,0 +1,40 @@
+.header-content {
+  width: 100%;
+  height: 100vh;
+  .header {
+    background-color: $mainBlack;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 50px;
+    &__left {
+      line-height: 50px;
+      .application-name{
+        color: #f8f8f8;
+        font-size: 30px;
+        text-decoration: none;
+      }
+    }
+    &__right {
+      line-height: 50px;
+      .right {
+        display: flex;
+        justify-content: space-around;
+        &__login {
+          margin-right: 15px;
+          &--link {
+            text-decoration: none;
+            color: #f8f8f8;
+          }
+        }
+        &__signup {
+          margin-right: 15px;
+          &--link {
+            text-decoration: none;
+            color: #f8f8f8;
+          }
+        }
+      }
+    }
+  }
+}
