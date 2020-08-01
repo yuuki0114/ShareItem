@@ -1,4 +1,11 @@
 @import "reset";
 @import "./config/*";
+@import "./mixin/*";
 @import "modules/items/*";
 @import "modules/partials/*";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body {
+  font-family: $fontMain;
+}
