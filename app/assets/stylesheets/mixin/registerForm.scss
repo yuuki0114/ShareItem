@@ -1,0 +1,17 @@
+@mixin registerForm (
+  // デフォルト値
+  $borderColor: $subGray,
+  $borderRadius: 4px,
+  $color: $subGray,
+  $height: 30px,
+  $padding:  0 16px,
+  $width: 100%
+  ){
+  border: 1px solid $borderColor;
+  border-radius: $borderRadius;
+  color: $subGray;
+  box-sizing: border-box;
+  height: $height;
+  padding: $padding;
+  width: $width;
+}
