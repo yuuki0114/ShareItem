@@ -14,7 +14,7 @@
         padding: 20px;
 
         .topic {
-          font-size: 14px;
+          font-size: $fontSize;
           font-weight: bold;
           margin-bottom: 8px;
           .labelDanger {
@@ -31,13 +31,28 @@
           height: 80px;
           padding: 10px;
         }
+        .formImage {
+          width: 300px;
+          height: 50px;
+          text-align: center;
+          line-height: 50px;
+          label {
+            height: inherit;
+            display: block;
+            background-color: rgb(230, 236, 240);
+            cursor: pointer;
+            input {
+              display: none;
+            }
+          }
+        }
       }
       .submit {
         .submitBtn {
           padding: 0 24px;
           background-color: #5f6368;
           color: $mainWhite;
-          font-size: 14px;
+          font-size: $fontSize;
           cursor: pointer;
         }
       }
