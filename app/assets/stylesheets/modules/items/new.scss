@@ -14,7 +14,7 @@
         padding: 20px;
 
         .topic {
-          font-size: 14px;
+          font-size: $fontSize;
           font-weight: bold;
           margin-bottom: 8px;
           .labelDanger {
@@ -26,6 +26,14 @@
         }
         .formDefault {
           @include registerForm();
+          .formImage {
+            width: 100%;
+            height: 30px;
+            cursor: pointer;
+          }
+          input {
+            display: none;
+          }
         }
         .formDetail {
           height: 80px;
@@ -37,7 +45,7 @@
           padding: 0 24px;
           background-color: #5f6368;
           color: $mainWhite;
-          font-size: 14px;
+          font-size: $fontSize;
           cursor: pointer;
         }
       }
