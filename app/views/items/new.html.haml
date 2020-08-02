@@ -20,20 +20,22 @@
         .topic
           画像
           %span.labelDanger 必須
-        = f.text_field :image, class: "formDefault", placeholder: "画像"
+        .formDefault
+          %label.formImage{for: "item_image"}
+            = f.file_field :image
+              
 
       .content
         .topic
-          貸出し期間
+          期間
           %span.labelDanger 必須
         = f.select :rental_period, [['1日','1日'], ['1週間','1週間'], ['2週間〜3週間','2週間〜3週間'], ['1ヶ月','1ヶ月']] ,{prompt: "選択してください"}, {class: "formDefault"}
-      
 
       .content
         .topic
-          貸出し金額
+          金額
           %span.labelDanger 必須
-        = f.number_field :price, class: "formDefault", placeholder: '0'
+        = f.number_field :price, class: "formDefault", value: '0'
 
       .submit
         = f.submit class: "submitBtn", value: "送信"
