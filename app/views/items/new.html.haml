@@ -20,10 +20,10 @@
         .topic
           画像
           %span.labelDanger 必須
-        .formDefault
-          %label.formImage{for: "item_image"}
+        .formImage
+          %label{for: "item_image"}
+            = icon('fa','camera', class: "photo-icon")
             = f.file_field :image
-              
 
       .content
         .topic
