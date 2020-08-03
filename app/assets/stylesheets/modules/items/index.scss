@@ -1,0 +1,20 @@
+.itemIndexWrapper {
+  background-color: rgb(239, 241, 245);
+  min-height: calc(100vh - 105px);
+  .contents {
+    padding: 60px 100px;
+    
+    &__area {
+      background-color: $mainWhite;
+      .items {
+        display: flex;
+        flex-wrap: wrap;
+        .item {
+          margin: 13px;
+          padding: 10px;
+          border: 1px solid $mainBlue;
+        }
+      }
+    }
+  }
+}
