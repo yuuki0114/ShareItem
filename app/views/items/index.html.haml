@@ -1,3 +1,23 @@
 = render partial: "layouts/header"
 
+.itemIndexWrapper
+  .contents
+    .contents__area
+      .items
+        - @items.each do |item|
+          .item
+            .image
+              = image_tag item.image.url, size: "200x200"
+            .detail
+              .detail__name
+                = item.name
+              .detail__info
+                .price
+                  = item.price
+                  %span<>
+                  円
+              .detail__tax
+                (税込)
+
+
 = render partial: "layouts/footer"

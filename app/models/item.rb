@@ -6,4 +6,6 @@ class Item < ApplicationRecord
     validates :rental_period, null: false
     validates :price,         null: false
   end
+
+  mount_uploader :image, ImageUploader 
 end
