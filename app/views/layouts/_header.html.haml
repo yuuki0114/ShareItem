@@ -5,12 +5,14 @@
         Shareitem
     .header__right
       .right
-        .right__login
-          = link_to '/', class: "right__login--link" do
-            ログイン
-        .right__signup
-          = link_to '/', class: "right__signup--link" do
-            新規登録
-        .right__lend-item
-          = link_to new_item_path, class: "right__lend-item--link" do
-            出品する
+        - if user_signed_in?
+          .right__lend-item
+            = link_to "出品する", new_item_path, class: "right__lend-item--link"
+          .right__logout
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "right__logout--link"
+        - else
+          .right__login
+            = link_to 'ログイン', new_user_session_path, class: "right__login--link"
+          .right__signup
+            = link_to '新規登録', new_user_registration_path, class: "right__signup--link"
+              
