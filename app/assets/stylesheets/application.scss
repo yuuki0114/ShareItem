@@ -1,8 +1,9 @@
 @import "reset";
 @import "./config/*";
 @import "./mixin/*";
-@import "modules/items/*";
 @import "modules/partials/*";
+@import "modules/items/*";
+@import "modules/devise/*";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
