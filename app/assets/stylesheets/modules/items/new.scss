@@ -49,11 +49,7 @@
       }
       .submit {
         .submitBtn {
-          padding: 0 24px;
-          background-color: #5f6368;
-          color: $mainWhite;
-          font-size: $fontSize;
-          cursor: pointer;
+          @include submitBtn();
         }
       }
     }
