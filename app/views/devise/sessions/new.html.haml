@@ -1,0 +1,19 @@
+= render partial: "layouts/sub-header"
+
+.signUpWrapper
+  .contents
+    .contents__title ログイン
+    .formArea
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field.content
+          = f.label :メールアドレス
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "formDefault"
+        .field.content
+          = f.label :パスワード
+          %br/
+          = f.password_field :password, autocomplete: "current-password", class: "formDefault"
+        .actions
+          = f.submit  "Log in", class: "submitBtn"
+
+= render partial: "layouts/footer"
