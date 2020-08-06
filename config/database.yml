@@ -49,6 +49,8 @@ test:
 #
 production:
   <<: *default
-  database: ShareItem_production
+  database: postgresql
+  encoding: unicode
+  pool: 5
   username: ShareItem
   password: <%= ENV['SHAREITEM_DATABASE_PASSWORD'] %>
