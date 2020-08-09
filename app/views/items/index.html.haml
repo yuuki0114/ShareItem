@@ -6,20 +6,18 @@
       .items
         - @items.each do |item|
           = link_to item_path(item.id), class: "item" do
-            .image
+            .item--image
               - if item.image?
-                = image_tag item.image.url, size: "200x200"
+                = image_tag item.image.url, size: "198x198"
               - else
-                = image_tag "default.png", size: "200x200"
-            .detail
-              .detail__name.testDeco
+                = image_tag "default.png", size: "198x198"
+            .item--detail
+              .item--detail__name
                 = item.name
-              .detail__info
+              .item--detail__info
                 .price
                   = item.price
                   %span<>
-                  円
-                .detail__tax
-                (税込)
+                  円 (税込)
 
 = render partial: "layouts/footer"
