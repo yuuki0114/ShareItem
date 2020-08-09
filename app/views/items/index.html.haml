@@ -10,7 +10,7 @@
               - if item.image?
                 = image_tag item.image.url, size: "200x200"
               - else
-                = image_tag "default.png", size: "200x200"
+                = image_tag "/default.png", size: "200x200"
             .detail
               .detail__name.testDeco
                 = item.name
