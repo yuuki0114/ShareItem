@@ -12,14 +12,14 @@
               - else
                 = image_tag "default.png", size: "200x200"
             .detail
-              .detail__name
+              .detail__name.testDeco
                 = item.name
               .detail__info
                 .price
                   = item.price
                   %span<>
                   円
-              .detail__tax
+                .detail__tax
                 (税込)
 
 = render partial: "layouts/footer"
