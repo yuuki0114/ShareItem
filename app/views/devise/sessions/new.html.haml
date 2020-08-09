@@ -1,22 +1,23 @@
 = render partial: "layouts/sub-header"
 
 .signUpWrapper
+  = render 'layouts/notifications'
   .contents
-    .contents__title ログイン
-    .formArea
-      = form_with model: @user, url: user_registration_path, local: true do |f|
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .field.content
-          = f.label :メールアドレス
-          %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email", class: "formDefault"
-        .field.content
-          = f.label :パスワード
-          %br/
-          = f.password_field :password, autocomplete: "current-password", class: "formDefault"
-        .actions
-          = f.submit  "Log in", class: "submitBtn"
-      .register
-        = link_to "※アカウントをお持ちでない方はこちら", new_user_registration_path, class: "register--new"
+    .contents__area
+      .contents__area--title ログイン
+      .formArea
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .content
+            = f.label :メールアドレス
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "formDefault"
+          .content
+            = f.label :パスワード
+            %br/
+            = f.password_field :password, autocomplete: "current-password", class: "formDefault"
+          .actions
+            = f.submit  "Log in", class: "submitBtn"
+        .register
+          = link_to "※アカウントをお持ちでない方はこちら", new_user_registration_path, class: "register--new"
 
 = render partial: "layouts/footer"
