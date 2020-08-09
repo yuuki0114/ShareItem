@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: [:index]
+  before_action :move_to_index, except: [:index, :show]
   
   def index
     @items = Item.order(id: :desc)
@@ -11,11 +11,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if 
-      @item.save
-      redirect_to root_path
+    if @item.save
+      redirect_to root_path, notice: '商品を出品しました'
     else
-      redirect_to new_item_path
+      redirect_to new_item_path, notice: '商品を出品できませんでした'
     end 
   end
 
