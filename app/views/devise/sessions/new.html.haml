@@ -4,6 +4,7 @@
   .contents
     .contents__title ログイン
     .formArea
+      = form_with model: @user, url: user_registration_path, local: true do |f|
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field.content
           = f.label :メールアドレス
