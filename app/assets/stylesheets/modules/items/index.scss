@@ -11,9 +11,18 @@
         .item {
           margin: 13px;
           padding: 10px;
-          border: 1px solid $mainBlue;
-          .testDeco {
-            text-decoration: none;
+          text-decoration: none;
+          color: $mainBlue;
+          &--image {
+            border: 1px solid $mainBlue;
+            width: 198px;
+            height: 198px;
+          }
+          &--detail {
+            margin-top: 10px;
+            &__name {
+              margin-right: 7px;
+            }
           }
         }
       }
