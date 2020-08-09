@@ -1,0 +1,44 @@
+= render partial: "layouts/header"
+
+.itemShowWrapper
+  .contents
+    .item
+      .item__image
+        - if @item.image?
+          = image_tag @item.image.url, size: "500x500"
+        - else
+          = image_tag "default.png", size: "500x500"
+      .item__table
+        %table.table
+          %tbody
+          %tr
+            %th.table__left 出品者
+            %td.table__right
+              = @item.user.name
+            %tr
+              %th.table__left 商品名
+              %td.table__right
+                = @item.name
+            %tr
+              %th.table__left 価格
+              %td.table__right
+                = @item.price
+                %span<>
+                円 (税込)
+            %tr
+              %th.table__left 詳細
+              %td.table__right
+                = @item.detail
+            %tr
+              %th.table__left レンタル期間
+              %td.table__right
+                = @item.rental_period
+      -# - if user_signed_in? && current_user.id == @item.user_id
+      -#   .item-option
+      -#     = link_to edit_item_path(@item.id), method: :get, class: "item-option__edit" do
+      -#       商品を編集する
+      -#     = link_to item_path(@item.id), method: :delete, class: "item-option__delete" do
+      -#       商品を削除する
+      -# - elsif user_signed_in? && current_user.id != @item.user_id
+      
+= render partial: "layouts/footer"

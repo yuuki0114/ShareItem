@@ -3,7 +3,6 @@
   min-height: calc(100vh - 105px);
   .contents {
     padding: 60px 100px;
-    
     &__area {
       background-color: $mainWhite;
       .items {
@@ -13,6 +12,9 @@
           margin: 13px;
           padding: 10px;
           border: 1px solid $mainBlue;
+          .testDeco {
+            text-decoration: none;
+          }
         }
       }
     }

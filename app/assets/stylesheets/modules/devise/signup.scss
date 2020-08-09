@@ -28,6 +28,14 @@
       .submitBtn {
         @include submitBtn();
       }
+      .register {
+        margin-top: 15px;
+        &--new {
+          font-size: $fontSize;
+          text-decoration: none;
+          color: $subGray;
+        }
+      }
     }
   }
 }

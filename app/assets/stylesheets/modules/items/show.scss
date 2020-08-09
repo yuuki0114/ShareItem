@@ -1,0 +1,38 @@
+.itemShowWrapper {
+  background-color: rgb(239, 241, 245);
+  min-height: calc(100vh - 105px);
+  .contents {
+    padding: 60px 100px;
+    width: 700px;
+    margin: auto;
+    .item {
+      background-color: $mainWhite;
+      padding: 50px;
+      text-align: center;
+      &__table {
+        margin: 20px auto;
+        width: 500px;
+        .table {
+          width: 100%;
+          height: 375px;
+          border: 1px solid $mainGray;
+          &__left {
+            width: 20%;
+            background-color: #eee;
+            font-weight: 400;
+            padding: 8px;
+            border: 1px solid #dedede;
+            font-size: $fontSize;
+            text-align: center;
+          }
+          &__right {
+            width: 61%;
+            padding: 15px;
+            border: 1px solid #dedede;
+            font-size: $fontSize;
+          }
+        }
+      }
+    }
+  }
+}

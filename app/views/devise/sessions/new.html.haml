@@ -15,5 +15,7 @@
           = f.password_field :password, autocomplete: "current-password", class: "formDefault"
         .actions
           = f.submit  "Log in", class: "submitBtn"
+      .register
+        = link_to "※アカウントをお持ちでない方はこちら", new_user_registration_path, class: "register--new"
 
 = render partial: "layouts/footer"

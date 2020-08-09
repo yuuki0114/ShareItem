@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index]
   
   def index
-    @items = Item.all
+    @items = Item.order(id: :desc)
   end
 
   def new
@@ -19,9 +19,13 @@ class ItemsController < ApplicationController
     end 
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
   private
   def item_params
-    params.require(:item).permit(:name, :detail, :image, :rental_period, :price)
+    params.require(:item).permit(:name, :detail, :image, :rental_period, :price).merge(user_id: current_user.id)
   end
 
   def move_to_index
