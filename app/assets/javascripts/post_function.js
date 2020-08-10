@@ -1,7 +1,6 @@
 $(function() {
-  // 画像用のinputを生成する関数
   const buildFileField = function() {
-    const html = `<input id= "imageFile" type= "file" name= "item[image]">`;
+    const html = '<input id= "imageFile" type= "file" name= "item[image]">';
     return html;
   }
 
