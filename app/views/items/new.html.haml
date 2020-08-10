@@ -16,14 +16,17 @@
           %span.labelDanger 必須
         = f.text_area :detail, class: "formDefault formDetail", placeholder: "商品の説明"
 
-      .content
-        .topic
-          画像
-          %span.labelDanger 必須
-        .formImage
-          %label{for: "item_image"}
-            = icon('fa','camera', class: "photo-icon")
-            = f.file_field :image
+      .content.imageArea
+        .postArea
+          .topic
+            画像
+            %span.labelDanger 必須
+          .formImage
+            %label{for: "imageFile"}
+              #imageBox
+                = icon('fa','camera', class: "photo-icon")
+                = f.file_field :image, id: "imageFile"
+        .preview
 
       .content
         .topic
