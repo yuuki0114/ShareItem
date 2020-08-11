@@ -1,47 +1,41 @@
-= render partial: "layouts/sub-header"
+.itemNewContents
+  = form_with(model: @item, local: true, class: "formArea") do |f|
 
-.itemLentWrapper
-  = render 'layouts/notifications'
-  .contents
-    = form_with(model: @item, local: true, class: "formArea") do |f|
+    .content
+      .topic
+        商品名
+        %span.labelDanger 必須
+      = f.text_field :name, class: "formDefault", placeholder: "30字まで"
 
-      .content
+    .content
+      .topic
+        商品の詳細
+        %span.labelDanger 必須
+      = f.text_area :detail, class: "formDefault formDetail", placeholder: "商品の説明"
+
+    .content.imageArea
+      .postArea
         .topic
-          商品名
+          画像
           %span.labelDanger 必須
-        = f.text_field :name, class: "formDefault", placeholder: "30字まで"
+        .formImage
+          %label{for: "imageFile"}
+            #imageBox
+              = icon('fa','camera', class: "photo-icon")
+              = f.file_field :image, id: "imageFile"
+      .preview
 
-      .content
-        .topic
-          商品の詳細
-          %span.labelDanger 必須
-        = f.text_area :detail, class: "formDefault formDetail", placeholder: "商品の説明"
+    .content
+      .topic
+        期間
+        %span.labelDanger 必須
+      = f.select :rental_period, [['1日','1日'], ['1週間','1週間'], ['2週間〜3週間','2週間〜3週間'], ['1ヶ月','1ヶ月']] ,{prompt: "選択してください"}, {class: "formDefault"}
 
-      .content.imageArea
-        .postArea
-          .topic
-            画像
-            %span.labelDanger 必須
-          .formImage
-            %label{for: "imageFile"}
-              #imageBox
-                = icon('fa','camera', class: "photo-icon")
-                = f.file_field :image, id: "imageFile"
-        .preview
+    .content
+      .topic
+        金額
+        %span.labelDanger 必須
+      = f.number_field :price, class: "formDefault", placeholder: '0'
 
-      .content
-        .topic
-          期間
-          %span.labelDanger 必須
-        = f.select :rental_period, [['1日','1日'], ['1週間','1週間'], ['2週間〜3週間','2週間〜3週間'], ['1ヶ月','1ヶ月']] ,{prompt: "選択してください"}, {class: "formDefault"}
-
-      .content
-        .topic
-          金額
-          %span.labelDanger 必須
-        = f.number_field :price, class: "formDefault", placeholder: '0'
-
-      .submit
-        = f.submit class: "submitBtn", value: "送信"
-
-= render partial: "layouts/footer"
+    .submit
+      = f.submit class: "submitBtn", value: "送信"

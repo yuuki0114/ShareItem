@@ -3,7 +3,6 @@
 @import "flash";
 @import "./mixin/*";
 @import "modules/partials/*";
-@import "modules/credit_cards/*";
 @import "modules/devise/*";
 @import "modules/items/*";
 @import "font-awesome-sprockets";
@@ -11,7 +10,9 @@
 
 body {
   font-family: $fontMain;
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
+  .mainWrapper {
+    background-color: rgb(239, 241, 245);
+    min-height: calc(100vh - 105px);
+  }
 }

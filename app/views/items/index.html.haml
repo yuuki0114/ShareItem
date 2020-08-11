@@ -1,24 +1,18 @@
-= render partial: "layouts/header"
-
-.itemIndexWrapper
-  = render 'layouts/notifications'
-  .contents
-    .contents__area
-      .items
-        - @items.each do |item|
-          = link_to item_path(item.id), class: "item" do
-            .item--image
-              - if item.image?
-                = image_tag item.image.url, size: "198x198"
-              - else
-                = image_tag "default.png", size: "198x198"
-            .item--detail
-              .item--detail__name
-                = item.name
-              .item--detail__info
-                .price
-                  = item.price
-                  %span<>
-                  円 (税込)
-
-= render partial: "layouts/footer"
+.itemIndexContents
+  .itemIndexContents__area
+    .items
+      - @items.each do |item|
+        = link_to item_path(item.id), class: "item" do
+          .item--image
+            - if item.image?
+              = image_tag item.image.url, size: "198x198"
+            - else
+              = image_tag "default.png", size: "198x198"
+          .item--detail
+            .item--detail__name
+              = item.name
+            .item--detail__info
+              .price
+                = item.price
+                %span<>
+                円 (税込)
