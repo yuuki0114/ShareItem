@@ -1,81 +1,78 @@
-.itemLentWrapper {
-  background-color: rgb(239, 241, 245);
-  min-height: calc(100vh - 105px);
-  .contents {
-    padding: 20px 0 ;
-    .formArea {
-      width: 500px;
-      margin: 0 auto;
-      .content {
-        background-color: $mainWhite;
-        border: 1px solid $mainGray;
-        border-radius: 8px;
-        margin-bottom: 12px;
-        padding: 20px;
+.itemNewContents {
+  padding: 20px 0 ;
+  .formArea {
+    width: 500px;
+    margin: 0 auto;
+    .content {
+      background-color: $mainWhite;
+      border: 1px solid $mainGray;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      padding: 20px;
 
-        .topic {
-          font-size: $fontSize;
-          font-weight: bold;
-          margin-bottom: 8px;
-          .labelDanger {
-            background-color: red;
-            color: $mainWhite;
-            padding: 2px;
-            border-radius: 4px;
-          }
+      .topic {
+        font-size: $fontSize;
+        font-weight: bold;
+        margin-bottom: 8px;
+        .labelDanger {
+          background-color: red;
+          color: $mainWhite;
+          padding: 2px;
+          border-radius: 4px;
         }
-        .formDefault {
-          @include registerForm();
-        }
-        .formDetail {
-          height: 80px;
-          padding: 10px;
-        }
-        .postArea {
-          .formImage {
-            width: 300px;
+      }
+      .formDefault {
+        @include registerForm();
+      }
+      .formDetail {
+        height: 80px;
+        padding: 10px;
+      }
+      .postArea {
+        .formImage {
+          width: 300px;
+          height: 70px;
+          text-align: center;
+          line-height: 50px;
+          margin-top: 30px;
+          label {
             height: 70px;
-            text-align: center;
-            line-height: 50px;
-            margin-top: 30px;
-            label {
+            display: block;
+            background-color: rgb(230, 236, 240);
+            cursor: pointer;
+            #imageBox {
               height: 70px;
-              display: block;
-              background-color: rgb(230, 236, 240);
-              cursor: pointer;
-              #imageBox {
-                height: 70px;
-                input {
-                  display: none;
-                }
+              input {
+                display: none;
               }
             }
           }
         }
-        .preview {
-          width: 100px;
-          height: 120px;
-          margin-left: 20px;
-          &__image {
-            font-size: 12px;
-            text-align: center;
-            &--remove {
-              cursor: pointer;
-            }
+      }
+      .preview {
+        width: 100px;
+        height: 120px;
+        margin-left: 20px;
+        &__image {
+          font-size: 12px;
+          text-align: center;
+          &--remove {
+            cursor: pointer;
           }
         }
       }
-      .imageArea {
-        display: flex;
-      }
-      .submit {
-        .submitBtn {
-          @include submitBtn();
-        }
+    }
+    .imageArea {
+      display: flex;
+    }
+    .submit {
+      .submitBtn {
+        @include submitBtn();
       }
     }
   }
 }
+
 
 
 
