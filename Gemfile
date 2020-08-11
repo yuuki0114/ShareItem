@@ -73,3 +73,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'devise'
 gem "jquery-rails"
+gem 'payjp'

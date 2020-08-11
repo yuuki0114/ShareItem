@@ -12,9 +12,11 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path, notice: '商品を出品しました'
+      flash[:notice] = "商品を出品しました"
+      redirect_to root_path
     else
-      redirect_to new_item_path, notice: '商品を出品できませんでした'
+      flash[:alert] = "商品を出品できませんでした"
+      redirect_to new_item_path
     end 
   end
 

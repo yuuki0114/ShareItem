@@ -1,6 +1,7 @@
 = render partial: "layouts/sub-header"
 
 .itemLentWrapper
+  = render 'layouts/notifications'
   .contents
     = form_with(model: @item, local: true, class: "formArea") do |f|
 
