@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 2020_08_10_095923) do
     t.string "rental_period", null: false
     t.integer "price", null: false
     t.string "image", null: false
+    t.integer "postcode", null: false
+    t.string "address_region", null: false
+    t.string "trading_status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
