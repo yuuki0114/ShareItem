@@ -38,13 +38,19 @@
             %th.table__left レンタル場所の住所
             %td.table__right
               = @item.address_region
-    - if user_signed_in? && current_user.id == @item.user_id
-      .item-option
-        -# = link_to edit_item_path(@item.id), method: :get, class: "item-option__edit" do
-        -#   商品を編集する
-        = link_to "#", method: :delete, class: "item-option__delete" do
-          商品を削除する
-    - elsif user_signed_in? && current_user.id != @item.user_id
-      .item-buy
-        %button{onclick: "location.href='/credit_cards/#{@item.id}/buy'", class: "item-buy__btn"}
-          購入画面に進む
+          %tr
+            %th.table__left 貸出し状況
+            %td.table__right
+              = @item.trading_status
+
+    -if @item.trading_status == "出品中"
+      - if user_signed_in? && current_user.id == @item.user_id
+        .item-option
+          -# = link_to edit_item_path(@item.id), method: :get, class: "item-option__edit" do
+          -#   商品を編集する
+          = link_to "#", method: :delete, class: "item-option__delete" do
+            商品を削除する
+      - elsif user_signed_in? && current_user.id != @item.user_id
+        .item-buy
+          = link_to pay_item_path(@item.id),method: :post do
+            購入する
