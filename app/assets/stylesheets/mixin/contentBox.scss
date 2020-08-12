@@ -1,0 +1,15 @@
+@mixin contentBox (
+  $height: 150px,
+  $backgroundColor: $deepBlue,
+  $margin: 5px,
+  $textAlign: center,
+  $lineHeight: 150px,
+  $textDecoration: none
+  ){
+    height: $height;
+    background-color: $backgroundColor;
+    margin: $margin;
+    text-align: $textAlign;
+    line-height: $lineHeight;
+    text-decoration: $textDecoration;
+}

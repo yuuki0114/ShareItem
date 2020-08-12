@@ -9,7 +9,7 @@
           .right__lend-item
             = link_to "出品する", new_item_path, class: "right__lend-item--link"
           .right__user-config
-            = link_to "ユーザー管理", users_path, class: "right__user-config--link"
+            = link_to "ユーザー管理", user_path(current_user.id), class: "right__user-config--link"
           .right__logout
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "right__logout--link"
         - else

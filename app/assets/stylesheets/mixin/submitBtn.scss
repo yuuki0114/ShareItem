@@ -1,10 +1,10 @@
 @mixin submitBtn(
-  $color: $mainGreen,
+  $color: $deepGreen,
 ) {
   padding: 0 24px;
   height: 30px;
   background-color: $color;
-  color: $mainWhite;
+  color: $white;
   font-size: $fontSize;
   border-color: $color;
   cursor: pointer;

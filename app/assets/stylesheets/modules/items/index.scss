@@ -3,7 +3,7 @@
   &__area {
     width: 1000px;
     margin: 0 auto;
-    background-color: $mainWhite;
+    background-color: $white;
     .items {
       display: flex;
       flex-wrap: wrap;
@@ -11,9 +11,9 @@
         margin: 13px;
         padding: 10px;
         text-decoration: none;
-        color: $mainBlue;
+        color: $deepBlue;
         &--image {
-          border: 1px solid $mainBlue;
+          border: 1px solid $deepBlue;
           width: 198px;
           height: 198px;
         }
