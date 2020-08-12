@@ -4,8 +4,8 @@
     width: 500px;
     margin: 0 auto;
     .content {
-      background-color: $mainWhite;
-      border: 1px solid $mainGray;
+      background-color: $white;
+      border: 1px solid $lightGray;
       border-radius: 8px;
       margin-bottom: 12px;
       padding: 20px;
@@ -16,7 +16,7 @@
         margin-bottom: 8px;
         .labelDanger {
           background-color: red;
-          color: $mainWhite;
+          color: $white;
           padding: 2px;
           border-radius: 4px;
         }
