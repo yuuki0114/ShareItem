@@ -6,7 +6,7 @@
     width: 700px;
     margin: auto;
     .item {
-      background-color: $mainWhite;
+      background-color: $white;
       padding: 50px;
       text-align: center;
       &__table {
@@ -15,7 +15,7 @@
         .table {
           width: 100%;
           height: 375px;
-          border: 1px solid $mainGray;
+          border: 1px solid $lightGray;
           &__left {
             width: 20%;
             background-color: #eee;
