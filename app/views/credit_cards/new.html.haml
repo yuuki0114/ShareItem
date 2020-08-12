@@ -1,17 +1,27 @@
-= render 'layouts/notifications'
+.creditCardNewContents
+  .creditCardNewContents__area
+    .creditCardNewContents__area--title 支払い方法の登録
+    .contents
+      = form_with id: "charge-form", url: credit_cards_path, name: "inputForm", local: true do |f|
+        .content
+          .topic
+            カード番号
+            %span.labelDanger 必須
+          = f.text_field :card_number, name: "number", class: "formDefault", placeholder: "半角数字のみ", maxlength: "16", type: "text", id: "card_number"
 
-= form_with(id: "charge-form", url: credit_cards_path, name: "inputForm", local: true) do |f|
-  %label カード番号
-  = f.text_field :card_number, name: "number", class: "number", placeholder: "半角数字のみ", maxlength: "16", type: "text", id: "card_number"
-  %br
-  %label 有効期限
-  .expiration-date__form
-    .expiration-text 月
-    = f.select :exp_month, [["01", 1],["02", 2],["03", 3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{prompt: "--"}, id: "exp_month", name: "exp_month"
-    .expiration-text 年
-    = f.select :exp_year, [["2021", 2021],["2022", 2022],["2023",2023],["2024",2024],["2025",2025],["2026",2026],["2027",2027],["2028",2028],["2029",2029],["2030",2030]], {prompt: "--"}, id: "exp_year", name: "exp_year"
-
-  %label セキュリティコード
-  = f.text_field :security_code, name: "cvc", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-  #card_token
-    = f.submit(id: "token_submit", value: "追加する")
+        .content
+          .topic
+            有効期限
+            %span.labelDanger 必須
+          .expirationDate__form
+            = f.select :exp_month, [["01", 1],["02", 2],["03", 3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{prompt: "--"}, id: "exp_month", name: "exp_month", class: "formDefaultEx"
+            .expirationDate__form--date 月
+            = f.select :exp_year, [["2021", 2021],["2022", 2022],["2023",2023],["2024",2024],["2025",2025],["2026",2026],["2027",2027],["2028",2028],["2029",2029],["2030",2030]], {prompt: "--"}, id: "exp_year", name: "exp_year", class: "formDefaultEx"
+            .expirationDate__form--date 年
+        .content
+          .topic
+            セキュリティコード
+            %span.labelDanger 必須
+          = f.text_field :security_code, name: "cvc", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc", class: "formDefault"
+        #card_token
+          = f.submit id: "token_submit", value: "追加する", class: "submitBtn"
