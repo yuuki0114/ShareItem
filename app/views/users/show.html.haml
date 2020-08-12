@@ -1,8 +1,8 @@
 .userShowContents
   .userShowContents__area
-    .userShowContents__area--title ユーザー登録内容
+    .userShowContents__area--title ユーザー管理
     .contents
       .content
         = link_to "ログイン方法", "#", class: ""
       .content
-        = link_to "支払い方法", "#", class: ""
+        = link_to "支払い方法", new_credit_card_path, class: ""
