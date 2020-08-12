@@ -1,5 +1,5 @@
 .itemNewContents
-  = form_with(model: @item, local: true, class: "formArea") do |f|
+  = form_with(model: @item, local: true, class: "formArea", id: "itemNew") do |f|
     .content
       .topic
         商品名
@@ -32,9 +32,21 @@
 
     .content
       .topic
+        貸し出し場所の郵便番号
+        %span.labelDanger 必須
+      = f.number_field :postcode, class: "formDefault", placeholder: '例）1234567'
+
+    .content
+      .topic
+        貸し出し場所の住所
+        %span.labelDanger 必須
+      = f.text_field :address_region, class: "formDefault", placeholder: '例）滋賀県大津市におの浜１丁目'
+
+    .content
+      .topic
         金額
         %span.labelDanger 必須
       = f.number_field :price, class: "formDefault", placeholder: '0'
 
     .submit
-      = f.submit class: "submitBtn", value: "送信"
+      = f.submit class: "submitBtn", id: "itemSubmit", value: "送信"
