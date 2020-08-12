@@ -5,4 +5,7 @@
       .content
         = link_to "ログイン方法", "#", class: ""
       .content
-        = link_to "支払い方法", new_credit_card_path, class: ""
+        - if  current_user.credit_card.blank?
+          = link_to "支払い方法を登録する", new_credit_card_path, class: ""
+        -else
+          = link_to "支払い方法を削除する", credit_card_path(current_user.credit_card.id), method: :delete, class: ""
