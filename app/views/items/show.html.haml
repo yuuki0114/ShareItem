@@ -27,9 +27,13 @@
             %td.table__right
               = @item.detail
           %tr
-            %th.table__left レンタル期間
+            %th.table__left レンタル開始日
             %td.table__right
-              = @item.rental_period
+              = @item.rental_start
+          %tr
+            %th.table__left レンタル終了日
+            %td.table__right
+              = @item.rental_end
           %tr
             %th.table__left レンタル場所の郵便番号
             %td.table__right

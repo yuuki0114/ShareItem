@@ -12,10 +12,10 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      flash[:notice] = "商品を出品しました。"
+      flash[:notice] = "商品を出品しました"
       redirect_to root_path
     else
-      flash[:alert] = "商品を出品できませんでした。"
+      flash[:alert] = "商品を出品できませんでした"
       redirect_to new_item_path
     end 
   end
@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :detail, :image, :rental_period, :postcode, :address_region, :price, :trading_status).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :detail, :image, :rental_start, :rental_end, :postcode, :address_region, :price, :trading_status).merge(user_id: current_user.id)
   end
 
   def move_to_index

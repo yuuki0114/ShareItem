@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 2020_08_10_095923) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "detail", null: false
-    t.string "rental_period", null: false
+    t.date "rental_start", null: false
+    t.date "rental_end", null: false
     t.integer "price", null: false
     t.string "image", null: false
     t.integer "postcode", null: false
