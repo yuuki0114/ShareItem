@@ -3,7 +3,8 @@
   $borderRadius: 4px,
   $height: 30px,
   $padding:  0 16px,
-  $width: 100%
+  $width: 100%,
+  $display: block
   ){
   border: 1px solid $borderColor;
   border-radius: $borderRadius;
@@ -11,5 +12,5 @@
   height: $height;
   padding: $padding;
   width: $width;
-  display: block;
+  display: $display;
 }
