@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: postgresql
+  database: mysql2
   encoding: utf8
   pool: 5
   username: ShareItem
