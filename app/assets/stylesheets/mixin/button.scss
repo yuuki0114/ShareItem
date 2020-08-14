@@ -1,0 +1,22 @@
+@mixin button(
+  $line-height: 50px,
+  $background-color: $gray,
+  $color: $white,
+  $width: 150px,
+  $border-radius: 100px,
+  $display: inline-block,
+  $margin-top: 12px,
+  $text-decoration: none,
+  $text-align: center
+) {
+  line-height: $line-height;
+  background-color: $background-color;
+  color: $color;
+  width: $width; 
+  border-radius: $border-radius;
+  display: $display;
+  margin-top: $margin-top;
+  text-decoration: $text-decoration;
+  text-align: $text-align;
+  cursor: pointer;
+}
