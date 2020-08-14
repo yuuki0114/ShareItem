@@ -26,9 +26,18 @@
 
     .content
       .topic
-        期間
+        貸し出し期間期間
         %span.labelDanger 必須
-      = f.select :rental_period, [['1日','1日'], ['1週間','1週間'], ['2週間〜3週間','2週間〜3週間'], ['1ヶ月','1ヶ月']] ,{prompt: "選択してください"}, {class: "formDefault"}
+      .rentalPeriod
+        .rentalPeriod--start
+          .rentalPeriod--start__title
+            開始日
+          = f.date_select :rental_start, use_month_numbers: true, with_css_classes:'formDefault'
+        .rentalPeriod--end
+          .rentalPeriod--end__title
+            終了日
+          = f.date_select :rental_end, use_month_numbers: true, with_css_classes:'formDefault'
+
 
     .content
       .topic
