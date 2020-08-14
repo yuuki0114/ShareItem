@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "items#index"
   resources :users, only: [:index, :show]
-  resources :items, only: [:new, :create, :show, :destroy] do
+  resources :items, except: :index do
     member do
       post 'pay'
     end
