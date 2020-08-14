@@ -11,9 +11,7 @@
       padding: 20px;
 
       .topic {
-        font-size: $fontSize;
-        font-weight: bold;
-        margin-bottom: 8px;
+        @include topic();
         .labelDanger {
           background-color: red;
           color: $white;
