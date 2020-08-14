@@ -1,15 +1,3 @@
-@mixin submitBtn(
-  $color: $deepGreen,
-) {
-  padding: 0 24px;
-  height: 30px;
-  background-color: $color;
-  color: $white;
-  font-size: $fontSize;
-  border-color: $color;
-  cursor: pointer;
-}
-
 @mixin topic (
   $font-size: $fontSize,
   $font-weight: bold,

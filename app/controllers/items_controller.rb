@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = "商品を削除できませんでした"
-      redirect_to item_path(@item.id)
+      redirect_to controller: 'items', action: 'show'
     end 
   end
 
@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
     else
       flash[:alert] = "商品を更新できませんでした"
     end 
-    redirect_to item_path(@item.id)
+    redirect_to controller: 'items', action: 'show'
   end
 
   def pay

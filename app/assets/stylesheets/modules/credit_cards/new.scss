@@ -43,7 +43,7 @@
         @include registerForm();
       }
       .submitBtn {
-        @include submitBtn();
+        @include button();
         margin-left: 20px;
       }
     }

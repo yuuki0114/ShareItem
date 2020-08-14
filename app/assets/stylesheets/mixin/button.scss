@@ -1,8 +1,9 @@
 @mixin button(
-  $line-height: 50px,
-  $background-color: $gray,
+  $line-height: 30px,
+  $background-color: $lightBlue,
+  $border-color: $black,
   $color: $white,
-  $width: 150px,
+  $width: 100px,
   $border-radius: 100px,
   $display: inline-block,
   $margin-top: 12px,
@@ -11,6 +12,7 @@
 ) {
   line-height: $line-height;
   background-color: $background-color;
+  border-color: $border-color;
   color: $color;
   width: $width; 
   border-radius: $border-radius;

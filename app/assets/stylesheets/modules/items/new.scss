@@ -54,6 +54,10 @@
         &__image {
           font-size: 12px;
           text-align: center;
+          img {
+            width: 100px;
+            height: 100px;
+          }
           &--remove {
             cursor: pointer;
           }
@@ -117,14 +121,10 @@
       display: flex;
     }
     .submit {
+      text-align: center;
       .submitBtn {
-        @include submitBtn();
+        @include button();
       }
     }
   }
 }
-
-
-
-
-

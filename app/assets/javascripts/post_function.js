@@ -7,7 +7,7 @@ $(function() {
   // プレビュー用のimgタグを生成する関数
   const buildImg = function(url) {
   const html = `<div class="preview__image">
-                  <img src="${url}" width="100px" height="100px">
+                  <img src="${url}">
                   <div class="preview__image--remove">削除する</div>
                 </div>`;
   return html;

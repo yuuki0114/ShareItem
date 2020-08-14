@@ -42,17 +42,27 @@
       margin-bottom: 15px;
 
       &__edit {
-        @include button($background-color: $lightBlue);
+        @include button(
+          $line-height: 50px,
+          $width: 150px,
+        );
       }
 
       &__delete {
-        @include button();
+        @include button(
+        $background-color: $gray,
+        $line-height: 50px,
+        $width: 150px
+        );
       }
     }
     &--buy {
       margin-bottom: 15px;
       &__btn {
-        @include button($background-color: $lightBlue);
+        @include button(
+          $line-height: 50px,
+          $width: 150px
+        );
       }
     }
 
@@ -76,8 +86,9 @@
       }
 
       &__submit {
-        @include button($background-color: $lightBlue);
-        border-color: $lightBlue;
+        @include button(
+          $width: 130px
+        );
       }
 
       &__area {
