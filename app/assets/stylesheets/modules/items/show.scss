@@ -34,6 +34,9 @@
       display: flex;
       justify-content: space-around;
       margin-bottom: 15px;
+      &__edit {
+        @include button($background-color: $lightBlue);
+      }
       &__delete {
         @include button();
       }
