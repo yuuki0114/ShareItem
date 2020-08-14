@@ -1,8 +1,10 @@
 class ItemsController < ApplicationController
+
   before_action :move_to_index, except: [:index, :show]
+  before_action :set_item, only: [:edit, :show]
   
   def index
-    @items = Item.order(id: :desc)
+    @items = Item.order(id: :desc).includes(:user)
   end
 
   def new
@@ -21,7 +23,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def destroy
@@ -33,6 +34,19 @@ class ItemsController < ApplicationController
       flash[:alert] = "商品を削除できませんでした"
       redirect_to item_path(@item.id)
     end 
+  end
+
+  def edit
+  end
+
+  def update
+    item = Item.find(params[:id])
+    if item.update(item_params)
+      flash[:notice] = "商品を更新しました"
+    else
+      flash[:alert] = "商品を更新できませんでした"
+    end 
+    redirect_to item_path(@item.id)
   end
 
   def pay
@@ -50,12 +64,17 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def item_params
     params.require(:item).permit(:name, :detail, :image, :rental_start, :rental_end, :postcode, :address_region, :price, :trading_status).merge(user_id: current_user.id)
   end
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
