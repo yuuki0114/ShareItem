@@ -1,10 +1,12 @@
 .itemShowContents
   .item
     .item__image
+
       - if @item.image?
         = image_tag @item.image.url, size: "500x500"
       - else
         = image_tag "default.png", size: "500x500"
+
     .item__table
       %table.table
         %tbody
@@ -55,6 +57,27 @@
           = link_to item_path(@item.id), method: :delete, class: "item--option__delete" do
             削除する
       - elsif user_signed_in? && current_user.id != @item.user_id
-        .item-buy
-          = link_to pay_item_path(@item.id),method: :post do
+        .item--buy
+          = link_to pay_item_path(@item.id),method: :post, class: "item--buy__btn" do
             購入する
+
+    .item--comment
+      - if current_user
+        = form_with(model: [@item, @comment], local: true) do |f|
+          = f.text_area :text, class: "item--comment__body", rows: "2"
+          %p.item--comment__notice 
+            貸し出し期限の交渉などができます
+          = f.submit class: "item--comment__submit", value: "コメントする"
+      - else
+        ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+      .item--comment__area
+        .topic ＜コメント一覧＞
+        - if @comments
+          - @comments.each do |comment|
+            .comments
+              .comments--contributor
+                = comment.user.name
+              .comments--content
+                = comment.text
+                .comments--content__time
+                  = comment.created_at.strftime('%Y/%m/%d %H:%M:%S')

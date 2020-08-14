@@ -23,6 +23,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @item.comments.order(id: :desc).includes(:user)
   end
 
   def destroy

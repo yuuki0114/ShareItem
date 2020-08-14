@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       post 'pay'
     end
+    resources :comments, only: :create
   end
   resources :credit_cards, only: [:new, :create, :destroy] 
 end
