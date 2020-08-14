@@ -24,6 +24,17 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    if item.destroy
+      flash[:notice] = "商品を削除しました"
+      redirect_to root_path
+    else
+      flash[:alert] = "商品を削除できませんでした"
+      redirect_to item_path(@item.id)
+    end 
+  end
+
   def pay
     @card = CreditCard.find_by(user_id: current_user.id)
     @item = Item.find(params[:id])
