@@ -41,8 +41,6 @@ $(function() {
     // 新しい画像投稿のタグを追加
     if ($('#imageFile').length == 0) {
       const test =$('#imageBox').append(buildFileField);
-      console.log(test);
-      console.log("hoge");
     }
     });
 });
