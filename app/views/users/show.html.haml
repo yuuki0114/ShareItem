@@ -3,8 +3,6 @@
     .userShowContents__area--title ユーザー管理
     .contents
       .content
-        = link_to "ログイン方法", "#", class: ""
-      .content
         - if  current_user.credit_card.blank?
           = link_to "支払い方法を登録する", new_credit_card_path, class: ""
         -else
