@@ -52,14 +52,15 @@
     -if @item.trading_status == "出品中"
       - if user_signed_in? && current_user.id == @item.user_id
         .item--option
-          = link_to edit_item_path(@item.id), method: :get, class: "item--option__edit" do
-            編集する
-          = link_to item_path(@item.id), method: :delete, class: "item--option__delete" do
-            削除する
-      - elsif user_signed_in? && current_user.id != @item.user_id
+          = link_to "編集する", edit_item_path(@item.id), method: :get, class: "item--option__edit"
+          = link_to "削除する", item_path(@item.id), method: :delete, class: "item--option__delete"
+
+      - elsif user_signed_in? && current_user.credit_card.blank?
         .item--buy
-          = link_to pay_item_path(@item.id),method: :post, class: "item--buy__btn" do
-            購入する
+          = link_to "支払方法の登録", new_credit_card_path, class: "item--buy__btn" 
+      - elsif user_signed_in?
+        .item--buy
+          = link_to "購入する", pay_item_path(@item.id), class: "item--buy__btn"
 
     .item--comment
       - if current_user
