@@ -1,24 +1,47 @@
-# README
+# アプリケーションのリンク先
+___
+https://shareitemapp.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 概要
+___
+自分の持っているものを他の方にレンタルできるアプリケーションです。
+今使ってはいないけれど、捨てたり、売りたくはないものをレンタルして有効活用できればと思い作成しまし
+た。例えば、会社員の方が車を所有していて、休日しか利用しないので、平日も有効活用したい、といった方にも利用していただければと思います。
 
-Things you may want to cover:
+# テストアカウント
+___
+こちらをご利用ください
 
-* Ruby version
+・メールアドレス
+  hoge@gmail.com
 
-* System dependencies
+・パスワード
+  password
 
-* Configuration
+# 主な機能
+___
+ユーザー
+ ・ユーザー登録、ログイン、ログアウト
+ ・既に登録のあるメールアドレスで登録できない
 
-* Database creation
+出品機能
+ ・必須事項を入力することにより、商品を出品することができます。
+ (必須箇所は、商品名、詳細、レンタル期間、価格、画像、貸し出し場所です。)
 
-* Database initialization
+詳細機能
+ ・トップページで表示されている商品をクリックすると商品の詳細を確認することができます。
 
-* How to run the test suite
+支払い機能
+ ・ユーザーがログインをした後、支払い登録を行うことで、商品の詳細ページから商品をレンタルすることができます。
+ ・支払い登録に必要な情報は下記の通りです。
+  カード番号
+  4242424242424242
+  有効期限
+  12月 2021年
+  セキュリティコード
+  123
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+今後実装したいこと
+ ・ユーザー毎に出品した商品を見ることができるページの作成
+ ・お気に入り機能
+ ・商品の検索機能
