@@ -60,7 +60,7 @@
           = link_to "支払方法の登録", new_credit_card_path, class: "item--buy__btn" 
       - elsif user_signed_in?
         .item--buy
-          = link_to "購入する", pay_item_path(@item.id), class: "item--buy__btn"
+          = link_to "購入する", pay_item_path(@item.id), method: :post, class: "item--buy__btn"
 
     .item--comment
       - if current_user
