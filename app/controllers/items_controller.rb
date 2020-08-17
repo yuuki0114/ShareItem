@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show]
   
   def index
-    @items = Item.where.not(image: "").order(id: :desc).includes(:user)
+    @items = Item.where.not(image: nil).order(id: :desc).includes(:user)
   end
 
   def new
