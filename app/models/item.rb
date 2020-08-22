@@ -20,4 +20,10 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_many :comments
+
+  # 検索用メソッドの定義
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
 end
