@@ -1,0 +1,5 @@
+.searchForm
+  = form_with(url: search_items_path, local: true, method: :get, class: "searchForm__area") do |f|
+    = f.text_field :keyword, placeholder: "商品を検索する", class: "searchForm__area--input"
+    = button_tag type: 'submit', class: "searchForm__area--btn" do
+      = icon('fa', 'search')

@@ -1,0 +1,24 @@
+.searchForm {
+  text-align: center;
+  &__area {
+    margin-bottom: 40px;
+    &--input {
+      height: 35px;
+      width: 400px;
+      padding: 0 20px;
+    }
+    &--btn {
+      width: 39px;
+      height: 39px;
+      font-size: 20px;
+      cursor: pointer;
+      border: 1px solid #000;
+      border-radius: 50%;
+      background-color: $pink;
+      &:hover {
+        color: #fff;
+        background-color: #000;
+      }
+    }
+  }
+}
