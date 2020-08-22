@@ -65,6 +65,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:keyword]).where.not(image: "").order(id: :desc)
+  end
+
   private
 
   def item_params
